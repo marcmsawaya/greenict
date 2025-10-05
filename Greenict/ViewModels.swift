@@ -69,11 +69,17 @@ class AuthViewModel: ObservableObject {
     }
     
     func signInAsGuest() {
-        Auth.auth().signInAnonymously { [weak self] _, error in
-            if error == nil {
-                self?.isAuthenticated = true
-            }
+        // Bypass Firebase completely for demo mode
+        DispatchQueue.main.async {
+            self.isAuthenticated = true
         }
+        
+        // Comment out or remove the Firebase call
+        // Auth.auth().signInAnonymously { [weak self] _, error in
+        //     if error == nil {
+        //         self?.isAuthenticated = true
+        //     }
+        // }
     }
     
     func signOut() {

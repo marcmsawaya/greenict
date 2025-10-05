@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Foundation
-import Firebase
+import FirebaseFirestore  // This specific import, not just Firebase
 
 // MARK: - Smart Device Model
 struct SmartDevice: Identifiable, Codable {
